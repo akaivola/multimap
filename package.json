@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "watch": "shadow-cljs watch app"
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.8.31"
+  },
+  "dependencies": {
+    "@cljs-oss/module-deps": "^1.1.1",
+    "create-react-class": "^15.6.3",
+    "jquery": "^3.4.0",
+    "jwt-decode": "^2.2.0",
+    "konva": "^3.2.4",
+    "mapbox-gl": "^0.53.1",
+    "polylabel": "^1.0.2",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-flip-move": "^3.0.1",
+    "react-highlight.js": "^1.0.7",
+    "react-konva": "^16.8.6",
+    "schedule": "^0.5.0"
+  }
+}
