@@ -18,9 +18,9 @@
 (def options
   {:container "map"
    :style     "mapbox://styles/mapbox/outdoors-v9"
-   :center    [24.94311914138914
-               60.32116290719057]
-   :zoom      13})
+   :center    [24.938976620569917
+               60.240800940396426]
+   :zoom      10.759965038721813})
 
 (defn gl-map []
   (re/create-class

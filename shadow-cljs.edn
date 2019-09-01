@@ -25,6 +25,7 @@
    :devtools   {:http-root    "resources/public"
                 :http-handler shadow.http.push-state/handle
                 :http-port    8280
+                :watch-dir    "resources/public"
                 :after-load   multimap.core/mount-root
                 :preloads     [devtools.preload
                                ;;day8.re-frame-10x.preload
