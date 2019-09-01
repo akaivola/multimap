@@ -27,14 +27,11 @@
   :profiles
   {:dev
    {:dependencies [[org.clojure/tools.nrepl "0.2.13" :exclusions [org.clojure/clojure]]
-                   [org.clojure/tools.namespace "0.2.11"]
-                   [binaryage/devtools "0.9.10"]
-                   [day8.re-frame/re-frame-10x "0.3.7-react16"]
-                   [day8.re-frame/tracing "0.5.1"]]
+                   [org.clojure/tools.namespace "0.2.11"] ]
 
     :plugins [[lein-pdo "0.1.1"]
               [refactor-nrepl "2.4.1-SNAPSHOT"]
-              [cider/cider-nrepl "0.22.0-SNAPSHOT"]]}
+              [cider/cider-nrepl "0.22.0-beta11"]]}
    :prod    {:dependencies []}
    :uberjar {:dependencies   []
              :omit-source    true
