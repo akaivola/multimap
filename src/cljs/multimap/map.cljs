@@ -22,6 +22,16 @@
                60.240800940396426]
    :zoom      10.759965038721813})
 
+(def mapant
+  {:id "mapant"
+   :source
+   {:type "raster"
+    :tiles ["https://wmts.mapant.fi/wmts_EPSG3857.php?z={z}&x={x}&y={y}"]
+    :tileSize 256}
+   :type "raster"
+   :layout {:visibility "visible"}
+   :source-layer "MapAnt"})
+
 (defn gl-map []
   (re/create-class
     {:component-did-mount
@@ -41,7 +51,7 @@
            (fn []
              (reset! map-ref glmap)
              (oset! js/window "map" glmap)
-             #_(doto glmap
+             (doto glmap
                     (.addLayer (clj->js mapant)))
 
              (.on glmap "click"
