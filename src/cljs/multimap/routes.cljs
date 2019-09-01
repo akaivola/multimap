@@ -19,7 +19,7 @@
     (.setEnabled true)))
 
 (defn app-routes []
-  (secretary/set-config! :prefix "#")
+  (secretary/set-config! :prefix "/")
   ;; --------------------
   ;; define routes here
   (defroute "/" []
@@ -42,6 +42,10 @@
 
   (defroute "/about" []
     (re-frame/dispatch [::events/set-active-panel :about-panel]))
+
+  (defroute "/map" []
+    (re-frame/dispatch [::events/set-active-panel :map-panel])
+    )
 
 
   ;; --------------------

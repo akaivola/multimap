@@ -4,6 +4,7 @@
    [breaking-point.core :as bp]
    [re-pressed.core :as rp]
    [multimap.subs :as subs]
+   [multimap.map :refer [map-panel]]
    ))
 
 
@@ -61,6 +62,7 @@
   (case panel-name
     :home-panel [home-panel]
     :about-panel [about-panel]
+    :map-panel [map-panel]
     [:div]))
 
 (defn show-panel [panel-name]
