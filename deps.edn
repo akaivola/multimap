@@ -4,7 +4,7 @@
  :deps
  {
   ;; clojurescript
-  reagent                     {:mvn/version "0.8.1"}
+  reagent                     {:mvn/version "0.8.1" :exclusions [cljsjs/react cljsjs/react-dom]}
   re-frame                    {:mvn/version "0.10.7"}
   com.andrewmcveigh/cljs-time {:mvn/version "0.5.2"}
   cljs-http                   {:mvn/version "0.1.45"}
