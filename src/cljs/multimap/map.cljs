@@ -52,15 +52,18 @@
              (reset! map-ref glmap)
              (oset! js/window "map" glmap)
              (doto glmap
-                    (.addLayer (clj->js mapant)))
+               (.addLayer (clj->js mapant)
+                          (some->>
+                              glmap .getStyle .-layers
+                              (filter #(= "symbol" (.-type %)))
+                              first
+                              .-id)))
 
              (.on glmap "click"
                   (fn [e]
                     (debug [(oget e "lngLat" "lng") (oget e "lngLat" "lat")])))))
 ))
-     :component-will-unmount
-     (fn []
-       )
+     :component-will-unmount (fn [])
      :reagent-render
      (fn []
        [:div#map])}))
