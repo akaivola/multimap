@@ -15,6 +15,7 @@ Open browser at [http://localhost:8280](http://localhost:8280)
 ## Rudimentary unprioritized roadmap
 
 - Add attribution to mapant.fi guys
+- Mapant.fi raster layer looks best in EPSG:3067 projection, mapbox does not support it by default but there may be ways to use the original 3067 projection
 - MLL map overlay
 - GPS Tracking
 - Map overlay controls
