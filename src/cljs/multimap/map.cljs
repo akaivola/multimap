@@ -55,7 +55,7 @@
                (.addLayer (clj->js mapant)
                           (some->>
                               glmap .getStyle .-layers
-                              (filter #(= "symbol" (.-type %)))
+                              (filter #(= "background" (.-type %)))
                               first
                               .-id)))
 
