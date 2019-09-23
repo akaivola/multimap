@@ -17,7 +17,7 @@
 
 (def options
   {:container "map"
-   :style     "mapbox://styles/mapbox/outdoors-v9"
+   :style     "mapbox://styles/akaivola/ck0v64jdp0eet1cqu0lpfq38g"
    :center    [24.938976620569917
                60.240800940396426]
    :zoom      10.759965038721813})
