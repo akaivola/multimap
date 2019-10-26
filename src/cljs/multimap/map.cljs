@@ -31,8 +31,7 @@
    :type "raster"
    :layout {:visibility "visible"}
    :source-layer "MapAnt"
-   :paint {:raster-opacity 0.3
-           }})
+   :paint {:raster-opacity 0.3}})
 
 (defn gl-map []
   (re/create-class
@@ -70,5 +69,11 @@
      (fn []
        [:div#map])}))
 
+(defn attribution []
+  [:div.map-panel--attribution
+   [:span "Map overlay courtesy of " [:a {:href "http://www.mapant.fi"} "MapAnt"]]])
+
 (defn map-panel []
-  [gl-map])
+  [:div.map-panel
+   [gl-map]
+   [attribution]])
