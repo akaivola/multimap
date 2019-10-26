@@ -30,7 +30,9 @@
     :tileSize 256}
    :type "raster"
    :layout {:visibility "visible"}
-   :source-layer "MapAnt"})
+   :source-layer "MapAnt"
+   :paint {:raster-opacity 0.3
+           }})
 
 (defn gl-map []
   (re/create-class
