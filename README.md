@@ -14,12 +14,16 @@ Open browser at [http://localhost:8280](http://localhost:8280)
 
 ## Prioritized roadmap
 
-- Map overlay controls
-- GPX track uploading
+- Map overlay controls UI
+- GPX controls UI
 - GPX track downloading
 - GPX track making
 - MLL map overlay
 - GPS Tracking
+
+## In progress
+
+- GPX track uploading
 
 ## Done items
 
