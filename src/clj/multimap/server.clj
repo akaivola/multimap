@@ -12,8 +12,8 @@
   (:gen-class))
 
 (defn -main [& args]
-   (let [port (Integer/parseInt (or (:port env) "3000"))]
-     (run-jetty handler {:port port :join? false})))
+  (let [port (Integer/parseInt (or (:port env) "3000"))]
+    (run-jetty handler {:port port :join? false})))
 
 (defn start-repl! []
   (when (:dev? env)
