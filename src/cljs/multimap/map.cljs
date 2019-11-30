@@ -73,7 +73,12 @@
   [:div.map-panel--attribution
    [:span "Map overlay courtesy of " [:a {:href "http://www.mapant.fi"} "MapAnt"]]])
 
+(defn controls []
+  [:div.map-controls
+   [:div.map-controls--box]])
+
 (defn map-panel []
   [:div.map-panel
    [gl-map]
-   [attribution]])
+   [attribution]
+   [controls]])
