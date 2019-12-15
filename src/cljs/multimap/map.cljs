@@ -74,8 +74,12 @@
    [:span "Map overlay courtesy of " [:a {:href "http://www.mapant.fi"} "MapAnt"]]])
 
 (defn controls []
-  [:div.map-controls
-   [:div.map-controls--box]])
+  (let [burger? (re/atom false)]
+    (fn []
+      [:section.map-controls
+       [:div.map-controls--burger.shadow
+        {:class    (when @burger? "active")
+         :on-click #(swap! burger? not)}]])))
 
 (defn map-panel []
   [:div.map-panel
