@@ -77,9 +77,14 @@
   (let [burger? (re/atom false)]
     (fn []
       [:section.map-controls
-       [:div.map-controls--burger.shadow
-        {:class    (when @burger? "active")
-         :on-click #(swap! burger? not)}]])))
+       {:class    (when @burger? "active")}
+       [:div.burger.shadow.button
+        {:on-click #(swap! burger? not)}]
+       [:div.menu-items
+        [:div.menu-item.shadow
+         [:div.gpx.button]
+         [:span "Upload GPX"]]]])))
+
 
 (defn map-panel []
   [:div.map-panel
