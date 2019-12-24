@@ -2,6 +2,7 @@
   (:require
    [mapbox-gl]
    [multimap.config :as config]
+   [multimap.gps :as gps]
    [oops.core :refer [oget oset!]]
    [re-frame.core :as r]
    [reagent.core :as re]
@@ -76,7 +77,7 @@
     [:div.menu-items
      [:div.menu-item
       [:div.gps.button]
-      [:span "Locate"]]
+      [:span {:on-click #(r/dispatch [:map/toggle-gps])} "Locate"]]
      [:div.menu-item
       [:div.gpx.button]
       [:span "Upload GPX"]]]]])
