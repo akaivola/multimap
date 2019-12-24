@@ -2,28 +2,26 @@
 
 Purpose is to use Clojure, re-frame, shadow-cljs, mapbox-gl plus various map sources to build an app for combining multiple outdoors trail mapping resources and GPS / GPX creation & visualization from those resources.
 
-- Implemented mapant.fi map overlay
-
 ## Basic setup guide for developers
 
 `yarn install`
 
-`yarn run shadow-cljs watch app`
+`yarn run watch`
 
 Open browser at [http://localhost:8280](http://localhost:8280)
 
-## Prioritized roadmap
+## Backlog
 
-- Map overlay controls UI
-- GPX controls UI
-- GPX track downloading
-- GPX track making
-- MLL map overlay
 - GPS Tracking
+- GPX track uploading
+- GPX track making
+- GPX track listing
+- GPX track downloading
+- MLL map overlay
 
 ## In progress
 
-- GPX track uploading
+- Map overlay controls UI
 
 ## Done items
 
