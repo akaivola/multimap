@@ -1,18 +1,15 @@
 (ns multimap.map
   (:require
-   [crate.core :as crate]
    [mapbox-gl]
    [multimap.config :as config]
    [oops.core :refer [oget oset!]]
    [re-frame.core :as r]
    [reagent.core :as re]
-   [taoensso.timbre :refer-macros [spy debug]]
-   ))
+   [taoensso.timbre :refer-macros [spy debug]]))
 
-(def token config/mapbox-public-token)
+(defonce token config/mapbox-public-token)
 
-(def Marker (oget mapbox-gl "Marker"))
-
+(defonce Marker (oget mapbox-gl "Marker"))
 (def map-ref (atom nil))
 
 (def options
@@ -73,21 +70,20 @@
   [:div.map-panel--attribution
    [:span "Map overlay courtesy of " [:a {:href "http://www.mapant.fi"} "MapAnt"]]])
 
-(defn controls []
-  (let [burger? (re/atom false)]
-    (fn []
-      [:section.map-controls
-       {:class    (when @burger? "active")}
-       [:div.burger.shadow.button
-        {:on-click #(swap! burger? not)}]
-       [:div.menu-items
-        [:div.menu-item.shadow
-         [:div.gpx.button]
-         [:span "Upload GPX"]]]])))
+(defn map-controls []
+  [:section.map-controls--container
+   [:section.map-controls.shadow
+    [:div.menu-items
+     [:div.menu-item
+      [:div.gps.button]
+      [:span "Locate"]]
+     [:div.menu-item
+      [:div.gpx.button]
+      [:span "Upload GPX"]]]]])
 
 
 (defn map-panel []
   [:div.map-panel
    [gl-map]
-   [attribution]
-   [controls]])
+   #_[attribution]
+   [map-controls]])
