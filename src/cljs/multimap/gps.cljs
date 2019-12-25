@@ -1,6 +1,7 @@
 (ns multimap.gps
   (:require
-   [re-frame.core :as r]))
+   [re-frame.core :as r]
+   [taoensso.timbre :refer-macros [debug info warn]]))
 
 (defn halt-tracking! [id]
   (.clearWatch
@@ -9,12 +10,13 @@
 
 (defn init-tracking! []
   (when-let [loc (.-geolocation js/navigator)]
+    (info "Getting position")
     (.watchPosition
      loc
      (fn [position]
-       #_(debug "Position accuracy:" (-> position .-coords .-accuracy)
-                "Heading:" (-> position .-coords .-heading)
-                "Speed:" (-> position .-coords .-speed))
+       (debug "Position accuracy:" (-> position .-coords .-accuracy)
+              "Heading:" (-> position .-coords .-heading)
+              "Speed:" (-> position .-coords .-speed))
        (r/dispatch [:map/gps
                     {:latitude  (-> position .-coords .-latitude)
                      :longitude (-> position .-coords .-longitude)
@@ -32,18 +34,18 @@
 (r/reg-sub
  :map/gps-state?
  (fn [db [_]]
-   (-> @db :map :gps :state :id boolean)))
+   (-> @db :map :gps :id boolean)))
 
 (r/reg-event-db
  :map/gps
  (fn [db [_ position]]
-   (assoc-in @db [:map :gps :position] position)))
+   (assoc-in db [:map :gps :position] position)))
 
 (r/reg-event-db
  :map/toggle-gps
  (fn [db _]
    (update-in
-    db [:map :gps :state]
+    db [:map :gps]
     (fn [{:keys [id marker]}]
       (if id
         (do

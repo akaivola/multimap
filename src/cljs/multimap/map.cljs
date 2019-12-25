@@ -76,8 +76,9 @@
    [:section.map-controls.shadow
     [:div.menu-items
      [:div.menu-item
+      {:on-click #(r/dispatch [:map/toggle-gps])}
       [:div.gps.button]
-      [:span {:on-click #(r/dispatch [:map/toggle-gps])} "Locate"]]
+      [:span  "Locate"]]
      [:div.menu-item
       [:div.gpx.button]
       [:span "Upload GPX"]]]]])
