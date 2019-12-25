@@ -1,9 +1,11 @@
 (ns multimap.map
   (:require
+   [crate.core :as crate]
    [mapbox-gl]
    [multimap.config :as config]
    [multimap.gps :as gps]
    [oops.core :refer [oget oset!]]
+   [district0x.re-frame.interval-fx]
    [re-frame.core :as r]
    [reagent.core :as re]
    [taoensso.timbre :refer-macros [spy debug]]))

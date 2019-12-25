@@ -4,15 +4,16 @@
  :deps
  {
   ;; clojurescript
-  reagent                     {:mvn/version "0.8.1" :exclusions [cljsjs/react cljsjs/react-dom]}
-  re-frame                    {:mvn/version "0.10.7"}
-  com.andrewmcveigh/cljs-time {:mvn/version "0.5.2"}
-  cljs-http                   {:mvn/version "0.1.45"}
-  binaryage/oops              {:mvn/version "0.7.0"}
-  re-pressed                  {:mvn/version "0.2.2"}
-  breaking-point              {:mvn/version "0.1.2"}
-  clj-commons/secretary       {:mvn/version "1.2.4"}
-  crate                       {:mvn/version "0.2.5"}
+  reagent                         {:mvn/version "0.8.1" :exclusions [cljsjs/react cljsjs/react-dom]}
+  re-frame                        {:mvn/version "0.10.7"}
+  com.andrewmcveigh/cljs-time     {:mvn/version "0.5.2"}
+  cljs-http                       {:mvn/version "0.1.45"}
+  binaryage/oops                  {:mvn/version "0.7.0"}
+  re-pressed                      {:mvn/version "0.2.2"}
+  breaking-point                  {:mvn/version "0.1.2"}
+  clj-commons/secretary           {:mvn/version "1.2.4"}
+  crate                           {:mvn/version "0.2.5"}
+  district0x/re-frame-interval-fx {:mvn/version "1.0.2"}
 
   ;; clojure/clojurescript
   com.taoensso/timbre    {:mvn/version "4.10.0"}
